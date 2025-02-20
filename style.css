@@ -10,20 +10,16 @@
 }
 
 :root {
-    --bg-color: #000000;
-    --snd-bg-color: #ffffff; /* Cor de fundo secundária () */
-    --text-color: #000000; /* Cor do texto */
-    --main-color: #ff0000e5; /* Cor principal */
+    --bg-color: #121212; /* Fundo escuro intenso */
+    --snd-bg-color: #1a1a1a; /* Cinza escuro mais forte */
+    --text-color: #f5f5f5; /* Texto bem claro */
+    --main-color: #ff3b3f; /* Vermelho mais vibrante */
 }
-
-
+    
 
 body {
-    background: none; /* Usando a variável correta para fundo */
-    color: var(--text-color); /* Cor do texto */
-    padding-top: 6rem; /* Ajuste conforme necessário para que o conteúdo não fique sob o header fixo */
-    
-    
+    background: var(--bg-color); /* Fundo escuro */
+    color: var(--text-color); /* Texto claro */
 }
 
 section {
@@ -49,7 +45,7 @@ section {
 
 .logo {
     font-size: 3rem;
-    color: var(--bg-color); /* Corrigido com ponto e vírgula */
+    color: var(--main-color); /* Corrigido com ponto e vírgula */
     font-weight: 700;
     cursor: pointer; /* Corrigido com ponto e vírgula */
     transition: 0.3s ease; /* Corrigido */
@@ -61,7 +57,7 @@ section {
 
 .navbar a {
     font-size: 1.9rem;
-    color: var(--bg-color);
+    color: var(--text-color);
     margin-left: 4rem;
     font-weight: 700;
     transition: 0.3s ease;
@@ -69,15 +65,16 @@ section {
 
 .navbar a:hover,
 .navbar a.active {
-    color: var(--text-color);
+    color: var(--main-color);
 }
 
-#menu-icone{
+#menu-icone {
     font-size: 3.6rem;
-    color: var(--bg-color);
+    color: var(--text-color); /* Melhor visibilidade */
     cursor: pointer;
     display: none;
 }
+
 
 /* Home Section code */
 
@@ -88,7 +85,7 @@ section {
 }
 
 .inicio-img img{
-    width: 25vw;
+    width: 40vw;
     border-radius: 50%;
     box-shadow:0 0 25px var(--main-color);
     cursor: pointer;
@@ -169,7 +166,6 @@ span {
     border-radius: 4rem;
     box-shadow: none;
     font-size: 1.6rem;
-    color: var(--main-color);
     color: var(--bg-color);
     letter-spacing: 0.1rem;
     font-weight: 600;
@@ -224,50 +220,81 @@ span {
         margin: 2rem 0 3rem;
     }
 
+ /* Tecnologias Section Code */
+.tecnologias {
+    background: var(--snd-bg-color);
+    padding: 6rem 5%;
+    text-align: center;
+}
 
-    /* Services Section Code */
+.tecnologias .heading {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+}
 
-    .serviços h2{
-        text-align:center;
-        margin-bottom: 5rem;
-
-    }
-.services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.tecnologias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
-.services-container .services-box{
-    flex: 1 1 30rem;
-    background: rgba(8, 8, 8, 0.603);
-    padding:  6rem 2rem 6rem;
-    border-radius: 2rem;
+.tecnologia-box {
+    background: var(--bg-color);
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    border: 0.3rem solid var(--bg-color);
-    transition:  0.3s ease;
 }
-.services-container .services-box:hover {
-    border-color: var(--main-color);
-    transform: scale(1.02);
-}
-    
 
- .services-box i {
-    font-size: 7rem;
-    color:rgb(255, 255, 255)
- }
- 
- .services-box p{
-    font-size: 1.9rem;
-    margin: 1rem 0 3rem;
- }
- .services-box h3{
+.tecnologia-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.tecnologia-box i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.tecnologia-box h3 {
     font-size: 2rem;
- }
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
 
+.tecnologia-box p {
+    font-size: 1.5rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    .tecnologias .heading {
+        font-size: 3.2rem;
+    }
+    .tecnologia-box i {
+        font-size: 4.2rem;
+    }
+}
+
+@media (max-width: 617px) {
+    .tecnologias .heading {
+        font-size: 2.8rem;
+    }
+    .tecnologia-box h3 {
+        font-size: 1.8rem;
+    }
+    .tecnologia-box p {
+        font-size: 1.4rem;
+    }
+}
+
+
+   
  /* /* Projetos Section */ 
  .projetos {
     background: var(--snd-bg-color);
@@ -304,23 +331,28 @@ span {
 .projeto-box img {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .projeto-content {
     padding: 2rem;
+    background: #2a2a2a; /* Fundo mais escuro */
+    color: #f5f5f5; /* Cor do texto mais clara para contraste */
 }
+
 
 .projeto-content h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #f5f5f5;
 }
 
 .projeto-content p {
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: #ccc; /* Texto mais claro, mas não tão branco */
 }
+
 
 .projeto-content .btn {
     display: inline-block;
@@ -365,241 +397,43 @@ span {
 }
 
 
- /* Contact Section Code */
+/* footer section code */
 
- .contato {
-    background: rgba(0, 0, 0, 0.384);
- }
-
- .contato .heading {
-    text-align: center;
-}
-
- .contato h2{
-    margin-bottom: 3rem;
-    color: rgb(0, 0, 0);
- }
-
- .contato form{
-    max-width: 80rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
- }
-
- .contato form .input-box {
-    display: flex;
-    justify-content: center; /* Corrigido de justify-items */
-    flex-wrap: wrap;
-}
-
- .contato form .input-box input,
- .contato form textarea{
- width: 100%;
- padding: 1.5rem;
- font-size: 1.6rem;
- color: rgb(0, 0, 0);
- background: color rgba(0, 0, 0, 0.342);
- border-radius: 0.8rem;
- border: 0.25rem solid var(--main-color);
- margin: 0.7rem 0;
- resize: none;
- }
-
- .contato form .imput-box input {
-    width: 49%;
-    margin: 0.7rem 0.35rem;
- }
-
- .contato form .btn{
-    margin-top: 2rem;
-
- }
-
- /* footer section code */
-
-.footer{
+.footer {
     position: relative;
     bottom: 0;
     width: 100%;
     padding: 40px 0;
     background-color: rgba(253, 253, 253, 0.973);
-}
-
-.footer .social{
-    text-align: center;
-    padding-bottom: 25px;
-    color: #000000;
-}
-.footer .social a{
-    font-size: 25px;
-    color:#fc0404;
-    border: 2px solid var(--main-color);
-    width: 42px;
-    height: 42px;
-    line-height: 42px;
-    display: inline-block; 
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: 0.3s ease;
-}
-
-.footer .social a:hover{
-    transform: scale(1.2) translateY(-10px);
-    background-color: var(--main-color);
     color: var(--bg-color);
-    box-shadow: 0 0 25px var(--main-color);
-}
-
-.footer .copyright{
-    margin-top: 20px;
     text-align: center;
-    font-size: 16px;
-    color: var(--text-color);
 }
 
-/* Responsive Design Code */
-
-@media (max-width: 1200px) {
-   html{
-    font-size: 55%;     
-   }
-}
-
-@media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-    section {
-        padding: 10rem 3%;
-    }
-    .services{
-        padding: 7rem;
-    }
-    .contact form .input-box input{
-        width: 100%;
-    }
-    .footer {
-        padding: 2rem 3%;
-    }
-}
-
-@media (max-width: 991px) {
-    #menu-icon{
-        display: block;
-    }
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: -100%;
-        width: 255px;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        background: var(--main-color);
-        transition: all 0.5s ease;
-        backdrop-filter:blur(10px)
-            }
-    .navbar a{
-        display: block;
-        padding: 17px;
-        font-size: 22px;
-    }
-    .navbar.active{
-        right: 0;
-    }        
-    .inicio {
-        flex-direction: column;
-    }
-    .inicio-content h3{
-        font-size: 2.6rem;
-    }
-    .inicio-content h1{
-        font-size: 5rem;
-    }
-    .inicio-content{
-        order: 2;
-        margin-left: 1rem;
-    }
-    .inicio-img img {
-        width: 70vw;
-        margin-top: 4rem;
-        
-    }
-    .about {
-        flex-direction: column-reverse;
-    }
-    .about-img img {
-        width: 70vw;
-        margin-top: 4rem;
-        box-shadow: 0 0 25px var(main); /* Adicionado box-shadow */  
-    }
-    .services h2{
-        margin-bottom:  3rem;
-    }
-}
-
-@media (max-width: 617px){
-    .inicio-img img{
-        width:70vw;
-        margin-top: 8rem;
-    
-}
-}
-
-
-.tecnologias-container {
+.footer .social {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 2rem;
-    margin-top: 2rem; /* Espaçamento entre o texto e os ícones */
+    margin-top: 2rem;
 }
 
-/* Caixa de ícones das tecnologias */
-.tecnologia-box {
-    background: rgba(8, 8, 8, 0.603);
-    padding: 1rem;
-    border-radius: 1.5rem;
-    text-align: center;
-    transition: 0.3s ease;
-    border: 0.3rem solid transparent;
-}
-
-/* Efeito de hover nos ícones */
-.tecnologia-box:hover {
-    transform: translateY(-1rem);
-    box-shadow: 0 0 25px var(--main-color);
-    border-color: var(--main-color);
-}
-
-.tecnologia-box i {
-    font-size: 4rem;
+.footer .social a {
+    font-size: 2.5rem;
     color: var(--bg-color);
+    transition: 0.3s ease;
 }
 
-.tecnologia-box:hover i {
+.footer .social a:hover {
     color: var(--main-color);
+    transform: scale(1.2);
 }
 
-
-/* Responsividade */
-@media (max-width: 991px) {
-    .about-content,
-    .about-img {
-        flex: 1 1 100%;
-    }
-
-    .tecnologia-box {
-        flex: 1 1 4rem; /* Reduz o tamanho das caixas nos dispositivos móveis */
-    }
-}
-
+/* Final adjustments for footer and responsiveness */
 @media (max-width: 617px) {
-    .tecnologia-box {
-        flex: 01 1 3rem; /* Reduz ainda mais os ícones em telas muito pequenas */
+    .footer {
+        padding: 20px 0;
+    }
+
+    .footer .social a {
+        font-size: 2rem;
     }
 }
-
-
- 
