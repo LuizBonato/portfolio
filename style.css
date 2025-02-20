@@ -185,7 +185,7 @@ span {
         background: rgba(12, 10, 10, 0.158);
     }
     .about-img img {
-        width: 25vw;
+        width: 20vw;
         border: 2px solid var(--main-color);
         border-radius: 50%;
         box-shadow:0 0 25px var(--main-color);
