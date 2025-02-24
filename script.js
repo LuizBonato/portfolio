@@ -15,7 +15,7 @@ function setupMenu() {
 
 function setupTyped() {
     const options = {
-        strings: ["Desenvolvedor Backend", "Engenheiro Backend", "Desenvolvedor de Software"],
+        strings: ["Desenvolvedor Backend", "Engenheiro Backend", "Desenvolvedor de Software" , "Desenvolvedor de Software Backend", "Desenvolvedor Python", "Desenvolvedor Python",],
         typeSpeed: 100,
         backSpeed: 50,
         backDelay: 1000,
