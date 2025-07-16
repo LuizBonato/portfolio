@@ -85,18 +85,39 @@ section {
 }
 
 .inicio-img {
-    width: 25vw;
-    height: 25vw;
+    width: 50vw;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 25px var(--main-color);
-    animation: floatImage 4s ease-in-out infinite;
-    transition: 0.4s ease;
+    background: radial-gradient(circle at center, transparent 60%, rgba(255, 59, 63, 0.3) 100%);
+    box-shadow: 0 0 60px rgba(255, 59, 63, 0.6); /* Sombra intensa vermelha */
+    transition: all 0.4s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
+
+
+.inicio-img:hover {
+    animation: morphShapes 6s ease-in-out infinite;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 35px var(--main-color),
+                0 0 45px var(--main-color);
+}
+
+
+@keyframes morphShapes {
+    0%   { clip-path: circle(50% at 50% 50%); }
+    20%  { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+    40%  { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
+    60%  { clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%); }
+    80%  { clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); }
+    100% { clip-path: circle(50% at 50% 50%); }
+}
+
+
 
 .inicio-img:hover {
     box-shadow: 0 0 25px var(--main-color),
